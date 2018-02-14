@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Auto Completer Example</title>
+    <link href="//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700italic,700,900,900italic"
+          rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/index.css" rel="stylesheet" type="text/css">
+    <link href="app/directives/ms-search-bar/ms-search-bar.css" rel="stylesheet" type="text/css">
+
+</head>
+<body ng-controller="AppController as vm">
+
+<div ng-cloak>
+    <md-content class="md-padding">
+        <ms-search-bar on-search="vm.search(query)" on-result-click="vm.searchResultClick(item)"
+                       debounce="1000"></ms-search-bar>
+    </md-content>
+</div>
+
+<!-- lib -->
+<script src="dist/jquery-2.2.4.min.js"></script>
+<script src="dist/angular.js"></script>
+<!-- / lib -->
+
+<!-- app -->
+<script src="app/app.module.js"></script>
+<script src="app/app.core.module.js"></script>
+<script src="app/services/movie.service.js"></script>
+<script src="app/directives/ms-search-bar/ms-search-bar.directive.js"></script>
+<script src="app/app.controller.js"></script>
+<!-- / app -->
+</body>
+</html>

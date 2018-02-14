@@ -1,0 +1,170 @@
+/*----------------------------------------------------------------*/
+/*  ms-search-bar
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+/*  Variables
+/*----------------------------------------------------------------*/
+.ms-search-bar {
+  height: 64px;
+  font-size: 13px;
+}
+.ms-search-bar .ms-search-bar-expander,
+.ms-search-bar .ms-search-bar-collapser {
+  cursor: pointer;
+  margin: 0;
+  width: 64px !important;
+  height: 64px !important;
+  line-height: 64px !important;
+}
+.ms-search-bar .ms-search-bar-loader {
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+}
+.ms-search-bar .ms-search-bar-collapser {
+  display: none;
+}
+.ms-search-bar #ms-search-bar-input {
+  display: none;
+  min-height: 64px;
+  background-color: transparent;
+  font-size: 16px;
+}
+.ms-search-bar .ms-search-bar-results {
+  position: absolute;
+  top: 64px;
+  left: 16px;
+  right: 16px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: #FFFFFF;
+  max-height: 300px;
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 3px 3px -2px rgba(0, 0, 0, 0.12);
+}
+.ms-search-bar .ms-search-bar-results .no-results {
+  font-size: 18px;
+  padding: 16px;
+  color: rgba(0, 0, 0, 0.54);
+}
+.ms-search-bar .ms-search-bar-results .result {
+  position: relative;
+  height: 56px;
+  min-height: 56px;
+  max-height: 56px;
+  padding: 16px;
+  cursor: pointer;
+}
+.ms-search-bar .ms-search-bar-results .result.selected {
+  background: rgba(0, 0, 0, 0.07);
+}
+.ms-search-bar .ms-search-bar-results .result .image-container {
+  min-width: 50px;
+  width: 50px;
+  max-width: 50px;
+  margin-right: 8px;
+  float: left;
+}
+.ms-search-bar .ms-search-bar-results .result .image-container img {
+  width: 50px;
+  height: 50px;
+}
+.ms-search-bar .ms-search-bar-results .result .title {
+  font-size: 16px;
+}
+.ms-search-bar .ms-search-bar-results .result .description {
+  padding-top: 6px;
+  font-size: 14px;
+}
+.ms-search-bar.expanded {
+  position: absolute;
+  padding: 8px 16px;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+.ms-search-bar.expanded #ms-search-bar-input {
+  display: block;
+}
+.ms-search-bar.expanded .ms-search-bar-collapser {
+  display: block;
+}
+
+body.ms-search-bar-expanded #toolbar {
+  z-index: 999 !important;
+}
+
+@media screen and (max-width: 960px) {
+  .ms-search-bar-label {
+    padding: 0 8px 0 12px;
+  }
+}
+
+
+.search-wrapper{
+  background: #FFFFFF;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  min-height: initial;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  align-content: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.search{
+  height: 56px;
+  line-height: 56px;
+  padding: 18px;
+  background: #FFFFFF;
+  min-width: 0;
+  min-height: initial;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  max-width: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  align-content: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.search input{
+  padding-left: 16px;
+  height: 56px;
+  color: rgba(0, 0, 0, 0.54);
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  margin: 0;
+  min-height: initial;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  box-sizing: border-box;
+  font-size: 100%;
+  outline: none;
+}

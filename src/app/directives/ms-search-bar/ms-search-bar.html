@@ -1,0 +1,41 @@
+<div class="search-wrapper">
+    <div class="search">
+        <i class="material-icons" ng-if="MsSearchBar.resultsLoading === false">search</i>
+        <div class="ms-search-bar-loader"
+             ng-if="MsSearchBar.resultsLoading === true">
+            <svg class="spinner" width="30px" height="30px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+            </svg>
+        </div>
+        <input id="ms-search-bar-input" type="text" placeholder="Search for movies"
+               ng-model="MsSearchBar.query"
+               ng-model-options="MsSearchBar.queryOptions"
+               ng-blur="MsSearchBar.blur()"
+               ng-keydown="MsSearchBar.handleKeydown($event)">
+        <button ng-show="MsSearchBar.query.length > 0"
+                class="ms-search-bar-collapser md-icon-button"
+                ng-click="MsSearchBar.clear()"
+                aria-label="Clear Search Bar">
+            <i class="material-icons">clear</i>
+        </button>
+        <div class="ms-search-bar-results" ng-if="MsSearchBar.results">
+            <div class="no-results" ng-if="MsSearchBar.results.length === 0">{{MsSearchBar.errorMessage}}</div>
+            <div class="result" ng-repeat="result in MsSearchBar.results"
+                 ng-click="MsSearchBar.handleResultClick(result)"
+                 ng-mouseenter="MsSearchBar.handleMouseenter($index)"
+                 ng-mousedown="MsSearchBar.absorbEvent($event)"
+                 ng-class="{'selected': $index == MsSearchBar.selectedResultIndex}"
+                 md-ink-ripple>
+                <div>
+                    <div class="image-container">
+                        <img ng-src="{{result.Poster}}">
+                    </div>
+                    <div>
+                        <div class="title">{{result.Title}}</div>
+                        <div class="description" ng-if="result.Year">{{result.Year}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
